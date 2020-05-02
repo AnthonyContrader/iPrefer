@@ -27,6 +27,7 @@ public class UserView extends AbstractView {
 	 */
 	@Override
 	public void showResults(Request request) {
+		
 		if (request != null) {
 			System.out.println("\n------------------- Gestione utenti ----------------\n");
 			System.out.println("ID\tUsername\tPassword\tTipo Utente");

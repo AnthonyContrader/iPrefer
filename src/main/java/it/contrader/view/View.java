@@ -25,4 +25,8 @@ public interface View {
 	 * 				il controller che implementa la logica necessaria.
 	 */
 	public void submit();
+	
+
+	
+	
 }
