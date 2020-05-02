@@ -13,7 +13,6 @@ import it.contrader.service.UserService;
  *Si osservi che nel Controller compaiono solo oggetti del DTO e non del Model!
  */
 public class UserController implements Controller {
-
 	/**
 	 * definisce il pacchetto di vista user.
 	 */
