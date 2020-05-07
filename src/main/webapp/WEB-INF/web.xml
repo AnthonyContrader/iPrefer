@@ -32,4 +32,71 @@
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/UserServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  <description></description>
+  <display-name>BevandaServlet</display-name>
+  <servlet-name>BevandaServlet</servlet-name>
+  <servlet-class>it.contrader.servlets.BevandaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BevandaServlet</servlet-name>
+    <url-pattern>/BevandaServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <description></description>
+  <display-name>ClienteServlet</display-name>
+  <servlet-name>ClienteServlet</servlet-name>
+  <servlet-class>it.contrader.servlets.ClienteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClienteServlet</servlet-name>
+    <url-pattern>/ClienteServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <description></description>
+  <display-name>OrdinazioneServlet</display-name>
+  <servlet-name>OrdinazioneServlet</servlet-name>
+  <servlet-class>it.contrader.servlets.OrdinazioneServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrdinazioneServlet</servlet-name>
+    <url-pattern>/OrdinazioneServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <description></description>
+  <display-name>PiattoServlet</display-name>
+  <servlet-name>PiattoServlet</servlet-name>
+  <servlet-class>it.contrader.servlets.PiattoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PiattoServlet</servlet-name>
+    <url-pattern>/PiattoServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <description></description>
+  <display-name>PrenotazioneServlet</display-name>
+  <servlet-name>PrenotazioneServlet</servlet-name>
+  <servlet-class>it.contrader.servlets.PrenotazioneServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PrenotazioneServlet</servlet-name>
+    <url-pattern>/PrenotazioneServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <description></description>
+  <display-name>RecensioneServlet</display-name>
+  <servlet-name>RecensioneServlet</servlet-name>
+  <servlet-class>it.contrader.servlets.RecensioneServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RecensioneServlet</servlet-name>
+    <url-pattern>/RecensioneServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

@@ -15,6 +15,12 @@
 <div class="navbar">
   <a class="active" href="homeadmin.jsp">Home</a>
   <a href="UserServlet?mode=userlist">Users</a>
+  <a href="BevandaServlet?mode=bevandalist">Bevande</a>
+  <a href="ClienteServlet?mode=clientelist">Clienti</a>
+  <a href="OrdinazioneServlet?mode=ordinazionelist">Ordinazioni</a>
+  <a href="PiattoServlet?mode=piattolist">Piatto</a>
+  <a href="PrenotazioneServlet?mode=prenotazionelist">Prenotazioni</a>
+  <a href="RecensioneServlet?mode=recensionelist">Recensioni</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 
