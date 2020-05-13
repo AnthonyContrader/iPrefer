@@ -13,6 +13,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.Temporal;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,28 +25,26 @@ import lombok.NoArgsConstructor;
 
 
 
-//@AllArgsConstructor
-//@NoArgsConstructor
-//@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Entity
 public class Prenotazione {
-	
-
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	@Column(unique = true)
-	
-	Date data_ora = new Date();
-	DateFormat formatoData = DateFormat.getDateInstance(DateFormat.LONG, Locale.ITALY);
+	 
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private Date data_ora;
 	
 	private int tavolo;
 	
-	
-//	@ManyToOne
-//	@JoinColumn(name= "id_cliente", referencedColumnName="id_cliente")
-//	private Cliente id_cliente;
+	@ManyToOne
+	@JoinColumn(name= "id_cliente", referencedColumnName= "id")
+	private Cliente cliente;
 	
 }
