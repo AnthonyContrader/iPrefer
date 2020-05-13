@@ -5,7 +5,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Homepage for Admin ">
-<meta name="author" content="Vittorio Valent">
+<meta name="author" content="Ambrogio Santo">
 
 <title>Home</title>
 
@@ -21,7 +21,9 @@
 
 
 	<div class="navbar">
-		<a class="active" href="/homeadmin.jsp">Home</a> <a href=/user/getall>Users</a>
+		<a class="active" href="/homeadmin.jsp">Home</a> 
+		<a href=/user/getall>Utenti</a>
+		<a href=/piatto/getall>Piatti</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 
