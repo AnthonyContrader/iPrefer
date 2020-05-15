@@ -24,6 +24,11 @@
 		<a class="active" href="/homeadmin.jsp">Home</a> 
 		<a href=/user/getall>Utenti</a>
 		<a href=/piatto/getall>Piatti</a>
+		<a href=/bevanda/getall>Bevande</a>
+		<a href=/cliente/getall>Clienti</a>
+		<a href=/prenotazione/getall>Prenotazioni</a>
+		<a href=/ordinazione/getall>Ordinazioni</a>
+		<a href=/recensione/getall>Recensioni</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 

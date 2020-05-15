@@ -13,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -29,10 +31,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
+@Table(name="prenotazione")
 public class Prenotazione {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id") // aggiunto nuovo
 	private long id;
 	
 	@Column(unique = true)
@@ -42,6 +46,11 @@ public class Prenotazione {
 	private Date data_ora;
 	
 	private int tavolo;
+	
+	//@OneToOne(mappedBy="prenotazione")
+	@OneToOne
+	@JoinColumn(unique = true)
+	private Recensione recensione; //aggiunto io 
 	
 	@ManyToOne
 	@JoinColumn(name= "id_cliente", referencedColumnName= "id")

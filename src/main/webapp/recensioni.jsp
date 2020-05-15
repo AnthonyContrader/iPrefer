@@ -1,4 +1,6 @@
-<%@ page import="it.contrader.dto.RecensioneDTO" import="java.util.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="it.contrader.dto.RecensioneDTO" import="it.contrader.dto.PrenotazioneDTO" import="java.util.*"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -20,6 +22,7 @@
 	<div class="main">
 		<%
 			List<RecensioneDTO> list = (List<RecensioneDTO>) request.getSession().getAttribute("list");
+			List<PrenotazioneDTO> listp = (List<PrenotazioneDTO>) request.getSession().getAttribute("listp");
 		%>
 
 		<br>
@@ -28,19 +31,19 @@
 			<tr>
 				<th>Voto</th>
 				<th>Testo</th>
-				<th></th>
+				<th>Id della prenotazione</th>
 				<th></th>
 			</tr>
 			<%
 				for (RecensioneDTO r : list) {
 			%>
 			<tr>
-				<td><a href="/recensione/read?id=<%=r.getId()%>">
-						<%=r.getVoto()%>
+				<td><a href="/recensione/read?id=<%=r.getId()%>"> <%=r.getVoto()%>
 				</a></td>
 				<td><%=r.getTesto()%></td>
+				<td><%=r.getPrenotazione().getId()%></td>
 				<td><a href="/recensione/preupdate?id=<%=r.getId()%>">Edit</a></td>
-				
+
 				<td><a href="/recensione/delete?id=<%=r.getId()%>">Delete</a></td>
 
 			</tr>
@@ -66,6 +69,24 @@
 					<input type="text" id="testo" name="testo"
 						placeholder="inserisci il testo della recensione">
 				</div>
+			</div>
+			<div class="row">
+			<div class ="col-25">
+			<label for="prenotazione">ID_PREN</label>
+			</div>
+			<div class="col-75">
+				<select id="prenotazione" name="IdPren" required>
+					<option value="" disabled selected>Choose your option</option>
+					<%
+                for (PrenotazioneDTO p : listp) {
+            %>
+					<option value="<%=p.getId()%>"><%=p.getId()%></option>
+					<%
+                }
+            %>
+				
+			</select>
+			</div>
 			</div>
 			<button type="submit">Insert</button>
 		</form>

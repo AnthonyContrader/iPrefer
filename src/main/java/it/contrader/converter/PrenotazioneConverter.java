@@ -13,7 +13,7 @@ public class PrenotazioneConverter extends AbstractConverter<Prenotazione, Preno
 	public Prenotazione toEntity(PrenotazioneDTO prenotazioneDTO ) {
 		Prenotazione prenotazione = null;
 		if (prenotazioneDTO != null) {
-			prenotazione = new Prenotazione(prenotazioneDTO.getId(), prenotazioneDTO.getData_ora(), prenotazioneDTO.getTavolo(), prenotazioneDTO.getCliente());	
+			prenotazione = new Prenotazione(prenotazioneDTO.getId(), prenotazioneDTO.getData_ora(), prenotazioneDTO.getTavolo(), prenotazioneDTO.getRecensione() ,prenotazioneDTO.getCliente());	
 		}
 		return prenotazione;
 	}
@@ -22,7 +22,7 @@ public class PrenotazioneConverter extends AbstractConverter<Prenotazione, Preno
 	public PrenotazioneDTO toDTO(Prenotazione prenotazione) {
 		PrenotazioneDTO prenotazioneDTO = null;
 		if (prenotazione != null) {
-			prenotazioneDTO = new PrenotazioneDTO(prenotazione.getId(), prenotazione.getData_ora(), prenotazione.getTavolo(), prenotazione.getCliente());
+			prenotazioneDTO = new PrenotazioneDTO(prenotazione.getId(), prenotazione.getData_ora(), prenotazione.getTavolo(), prenotazione.getRecensione(), prenotazione.getCliente());
 			
 		}
 		return prenotazioneDTO;

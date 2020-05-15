@@ -36,7 +36,7 @@
 				<td><%=r.getId()%></td>
 				<td><%=r.getVoto()%></td>
 				<td><%=r.getTesto()%></td>
-				<td><%=r.getPrenotazione()%></td>
+				<td><%=r.getPrenotazione().getId()%></td>
 			</tr>
 		</table>
 

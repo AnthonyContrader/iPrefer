@@ -20,7 +20,7 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	
+	@Column
 	private String nome_cliente;
 	private String cognome_cliente;
 	private boolean intolleranza_bool;

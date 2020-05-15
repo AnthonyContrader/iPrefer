@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import it.contrader.dto.PrenotazioneDTO;
 import it.contrader.dto.RecensioneDTO;
+import it.contrader.model.Prenotazione;
+import it.contrader.service.PrenotazioneService;
 import it.contrader.service.RecensioneService;
 
 @Controller
@@ -16,6 +20,9 @@ public class RecensioneController {
 
 	@Autowired
 	private RecensioneService service;	
+	
+	@Autowired
+	private PrenotazioneService servicep;
 
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -51,11 +58,13 @@ public class RecensioneController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("voto") int voto,
+	public String insert(HttpServletRequest request, @RequestParam("voto") int voto, @RequestParam("IdPren") Prenotazione prenotazione,
 			@RequestParam("testo") String testo) {
+		
 		RecensioneDTO dto = new RecensioneDTO();
 		dto.setVoto(voto);
 		dto.setTesto(testo);
+		dto.setPrenotazione(prenotazione);
 		service.insert(dto);
 		setAll(request);
 		return "recensioni";
@@ -75,5 +84,6 @@ public class RecensioneController {
 
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
+		request.getSession().setAttribute("listp", servicep.getAll());
 	}
 }
