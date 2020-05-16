@@ -53,7 +53,7 @@ public class Prenotazione {
 	private Recensione recensione; //aggiunto io 
 	
 	@ManyToOne
-	@JoinColumn(name= "id_cliente", referencedColumnName= "id")
-	private Cliente cliente;
+    @JoinColumn(name="id_cliente")
+    private Cliente cliente;
 	
 }

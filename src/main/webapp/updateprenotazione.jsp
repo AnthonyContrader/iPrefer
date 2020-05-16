@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.PrenotazioneDTO" import = "java.util.Date"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.PrenotazioneDTO" import="it.contrader.dto.ClienteDTO" import = "java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +24,8 @@
 
 <%PrenotazioneDTO p = (PrenotazioneDTO) request.getSession().getAttribute("dto");%>
 
+<%List<ClienteDTO> listC = (List<ClienteDTO>) request.getSession().getAttribute("listC"); %>
+
 
 <form id="floatleft" action="/prenotazione/update" method="post">
   <div class="row">
@@ -41,6 +43,22 @@
     <div class="col-75">
       <input type="number" id="tavolo" name="tavolo" value=<%=p.getTavolo()%>> 
     </div>
+    <input type="hidden" name="id" value =<%=p.getId() %>>
+  </div>
+  <div class="row">
+    <div class="col-100">
+					<select id="cliente" name="id_cliente" required>
+					<option value="" disabled selected>Seleziona Nome Cliente</option>
+					<%
+						for (ClienteDTO c : listC) {
+					%>
+					<option value="<%=c.getId()%>"><%=c.getNome_cliente() + " " + c.getCognome_cliente() %></option>
+					<%
+						}
+					%>
+					</select>
+				</div>
+				
     <input type="hidden" name="id" value =<%=p.getId() %>>
   </div>
  	

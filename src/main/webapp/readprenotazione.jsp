@@ -29,13 +29,13 @@
 				<th>ID Prenotazione</th>
 				<th>Data e ora</th>
 				<th>Tavolo</th>
-				<th>ID Cliente</th>
+				<th>Nome Cliente</th>
 			</tr>
 			<tr>
 				<td><%=p.getId()%></td>
 				<td><%=p.getData_ora()%></td>
 				<td><%=p.getTavolo()%></td>
-				<td><%=p.getCliente()%></td>
+				<td><%=p.getClienteDTO().getNome_cliente() + " " + p.getClienteDTO().getCognome_cliente()%></td>
 			</tr>
 		</table>
 

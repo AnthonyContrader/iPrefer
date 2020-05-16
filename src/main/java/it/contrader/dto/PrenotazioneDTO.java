@@ -21,6 +21,6 @@ public class PrenotazioneDTO {
 	
 	private Recensione recensione;
 	
-	private Cliente cliente;
+	private ClienteDTO clienteDTO;
 
 }
