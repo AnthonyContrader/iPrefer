@@ -69,7 +69,7 @@
 				<div class="col-25">
 					<label for="id_piatto">Inserisci Piatto</label>
 				</div>
-			<select id="id_piatto" name="id_piatto" required>
+			<select id="id_piatto" multiple name="id_piatto" required>
             <option value="" disabled selected>choose your options</option>
             <%
                 for (PiattoDTO a : listpiatto) {
