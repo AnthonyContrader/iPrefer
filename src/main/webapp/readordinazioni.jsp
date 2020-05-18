@@ -44,22 +44,23 @@
 				<th>prenotazione</th>
 				<th>costo totale</th>
 			</tr>
-			<%for (OrdinazioneDTO x : list) {
-				for (Piatto p : x.getPiatto()){
-					for(Bevanda b : x.getBevanda()){
+			<%
+				String nomepiatto = "";
+				String nomebevanda = "";
+				for (Piatto p : o.getPiatto()){
+					nomepiatto += (" " + p.getNome_piatto() + " ");
+				}
+					for(Bevanda b : o.getBevanda()){
+						nomebevanda = (" " + b.getNome_bevanda() + " ");
+					}
 						%>
 			<tr>
-				<td><%=x.getId()%></td>
-				<td><%=p.getNome_piatto()%></td>
-				<td><%=b.getNome_bevanda()%></td>
-				<td><%=x.getPrenotazione().getCliente().getCognome_cliente()%></td>
-				<td><%=x.getCosto_tot()%></td>
+				<td><%=o.getId()%></td>
+				<td><%=nomepiatto%></td>
+				<td><%=nomebevanda%></td>
+				<td><%=o.getPrenotazione().getCliente().getCognome_cliente()%></td>
+				<td><%=o.getCosto_tot()%></td>
 			</tr>
-			<%	
-					}
-						}
-							} 
-				%>
 		</table>
 
 		<br> <br> <br> <br> <br> <br> <br>
