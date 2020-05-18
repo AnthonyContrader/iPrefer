@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="it.contrader.dto.OrdinazioneDTO"
      import="it.contrader.dto.PiattoDTO" import="it.contrader.dto.BevandaDTO"
-	import="it.contrader.dto.PrenotazioneDTO"     
+	import="it.contrader.dto.PrenotazioneDTO"  import="it.contrader.model.Piatto"    import="it.contrader.model.Bevanda"  import="it.contrader.model.Prenotazione" 
      import="java.util.*"%>
 <!DOCTYPE html>
 <html>
@@ -35,9 +35,9 @@
 
 		<table>
 			<tr>
-				<th>ID_PIATTO</th>
-				<th>ID_BEVANDA</th>
-				<th>ID_PRENOTAZIONE</th>
+				<th>PIATTO</th>
+				<th>BEVANDA</th>
+				<th>PRENOTAZIONE</th>
 				<th>COSTO_TOT</th>
 				<th></th>
 				<th></th>
@@ -46,18 +46,23 @@
 			
 			<%
 				for (OrdinazioneDTO o : list) {
+					for (Piatto p : o.getPiatto()){
+						for(Bevanda b : o.getBevanda()){
+							
 			%>
 			<tr>
-				<td><a href="/ordinazione/read?id=<%=o.getId_ordinazione()%>"> <%=o.getPiatto()%>
+				<td><a href="/ordinazione/read?id=<%=o.getId_ordinazione()%>"><%=p.getNome_piatto()%>
 				</a></td>
-				<td><%=o.getBevanda()%></td>
-				<td><%=o.getPrenotazione()%></td>
+				<td><%=b.getNome_bevanda()%></td>
+				<td><%=o.getPrenotazione().getCliente().getCognome_cliente()%></td>
 				<td><%=o.getCosto_tot()%></td>
 				
 				<td><a href="/ordinazione/preupdate?id=<%=o.getId_ordinazione()%>">Modifica</a></td>
 				<td><a href="/ordinazione/delete?id=<%=o.getId_ordinazione()%>">Cancella</a></td>
 			</tr>
 			<%
+						}
+					}
 				}
 			%>
 		</table>
@@ -69,7 +74,7 @@
 				<div class="col-25">
 					<label for="id_piatto">Inserisci Piatto</label>
 				</div>
-			<select id="id_piatto" multiple name="id_piatto" required>
+			<select id="id_piatto" multiple name="id_piatto">
             <option value="" disabled selected>choose your options</option>
             <%
                 for (PiattoDTO a : listpiatto) {
@@ -85,7 +90,7 @@
 				<div class="col-25">
 					<label for="id_piatto">Inserisci Bevanda</label>
 				</div>
-			<select id="id_bevanda" name="id_bevanda" required>
+			<select id="id_bevanda" multiple name="id_bevanda">
             <option value="" disabled selected>choose your options</option>
             <%
                 for (BevandaDTO b : listbevanda) {
@@ -107,7 +112,7 @@
             <%
                 for (PrenotazioneDTO c : listprenotazione) {
             %>
-            <option value="<%=c.getId()%>"><%=c.getId() %></option>
+            <option value="<%=c.getId()%>"><%=c.getId() + c.getClienteDTO().getCognome_cliente() %></option>
             <%
                 }
             %>

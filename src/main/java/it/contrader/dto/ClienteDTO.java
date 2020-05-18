@@ -1,6 +1,7 @@
 package it.contrader.dto;
 
 
+import it.contrader.model.Prenotazione;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,5 +17,6 @@ public class ClienteDTO {
 	private boolean intolleranza_bool;
 	private String telefono;
 	private String intollerante;
+	//private Prenotazione prenotazione;
 	
 }
