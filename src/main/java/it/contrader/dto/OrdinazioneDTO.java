@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class OrdinazioneDTO {
-	private long id_ordinazione;
+	private long id;
 	private float costo_tot;
 	private Date data_ora;
 	private Set<Piatto> piatto;

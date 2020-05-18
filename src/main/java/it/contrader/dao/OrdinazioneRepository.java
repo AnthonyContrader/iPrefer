@@ -13,5 +13,5 @@ import it.contrader.model.Ordinazione;
 public interface OrdinazioneRepository extends CrudRepository<Ordinazione, Long> {
 	
 Ordinazione findById(long id);
-
 }
+

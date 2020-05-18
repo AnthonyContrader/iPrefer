@@ -12,7 +12,7 @@ public class OrdinazioneConverter extends AbstractConverter<Ordinazione, Ordinaz
 	public Ordinazione toEntity(OrdinazioneDTO ordinazioneDTO) {
 		Ordinazione ordinazione = null;
 		if (ordinazioneDTO != null) {
-			ordinazione = new Ordinazione(ordinazioneDTO.getId_ordinazione(),ordinazioneDTO.getPiatto(),ordinazioneDTO.getBevanda(),ordinazioneDTO.getPrenotazione(),ordinazioneDTO.getCosto_tot(),ordinazioneDTO.getData_ora());
+			ordinazione = new Ordinazione(ordinazioneDTO.getId(),ordinazioneDTO.getPiatto(),ordinazioneDTO.getBevanda(),ordinazioneDTO.getPrenotazione(),ordinazioneDTO.getCosto_tot(),ordinazioneDTO.getData_ora());
 			
 		}
 		
