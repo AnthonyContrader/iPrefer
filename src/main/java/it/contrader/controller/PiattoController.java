@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.contrader.dto.ClienteDTO;
 import it.contrader.dto.PiattoDTO;
 import it.contrader.service.PiattoService;
 
 @Controller
 @RequestMapping("/piatto")
-public class PiattoController {
+public class PiattoController extends AbstractController <PiattoDTO> {
 
 	@Autowired
 	private PiattoService service;
