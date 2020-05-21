@@ -1,0 +1,41 @@
+package it.contrader.model;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
+@Table(name="recensione")
+public class Recensione {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id") //nn c'èera prima
+	private long id;
+
+	@Column
+	private int voto;
+	private String testo;
+
+
+//	@JoinColumn(name = "id", referencedColumnName = "id")
+//	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade=CascadeType.ALL)
+//	@JoinColumn(name ="prenotazione_id", referencedColumnName= "id") //boh
+	@JoinColumn(unique = true)
+	private Prenotazione prenotazione;
+
+}
