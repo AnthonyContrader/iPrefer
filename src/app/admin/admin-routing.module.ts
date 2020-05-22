@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from '../layout/admin-layout/admin-layout.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './users/users.component';
+import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 
 /**
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'admin-dashboard', component: AdminLayoutComponent, children:[
     { path: '', component: AdminDashboardComponent},
     { path: 'users', component: UsersComponent},
+    { path: 'prenotazioni', component: PrenotazioniComponent},
     { path: 'work-in-progress', component: WorkInProgressComponent}
   ]}
 ];
