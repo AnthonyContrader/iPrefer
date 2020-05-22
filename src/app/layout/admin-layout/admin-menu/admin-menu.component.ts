@@ -12,6 +12,7 @@ export class AdminMenuComponent implements OnInit {
   isClientCollapsed = false;
   isAccountCollapsed = false;
   isPrenotazioneCollapsed = false;
+  isRecensioneCollapsed = false;
   
 
   constructor(private router: Router) {
@@ -41,5 +42,11 @@ export class AdminMenuComponent implements OnInit {
     if (this.isPrenotazioneCollapsed === false) {
       this.isPrenotazioneCollapsed = true;
     } else { this.isPrenotazioneCollapsed = false; }
+  }
+
+  recensionicollapse() {
+    if (this.isRecensioneCollapsed === false) {
+      this.isRecensioneCollapsed = true;
+    } else { this.isRecensioneCollapsed = false; }
   }
 }

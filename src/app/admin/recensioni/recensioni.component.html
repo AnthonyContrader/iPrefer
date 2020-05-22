@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10">
+      <table>
+        <tr>
+          <th>
+            Voto
+          </th>
+          <th>
+            Testo
+          </th>
+          <th>
+            Prenotazione
+          </th>
+          <th>
+            Edit
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="voto" [(ngModel)]="recensionetoinsert.voto">
+          </td>
+          <td>
+            <input placeholder="testo" [(ngModel)]="recensionetoinsert.testo">
+          </td>
+            <select [(ngModel)]="recensionetoinsert.prenotazione">
+               <option *ngFor="let prenotazione of prenotazioni" [ngValue]="prenotazione" >{{prenotazione.id}}</option>
+             </select>
+            <td>
+            <button (click)="insert(recensionetoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Clear</button>
+          </td>
+        </tr>
+        <tr *ngFor="let recensione of recensioni">
+          <td>
+            <input [(ngModel)]="recensione.voto">
+          </td>
+          <td>
+            <input [(ngModel)]="recensione.testo">
+          </td>
+          <td>
+            <label >{{recensione.prenotazione.id}}</label>
+           </td>
+          <td>
+            <button (click)=update(recensione)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(recensione)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+</div>

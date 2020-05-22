@@ -6,6 +6,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UsersComponent } from './users/users.component';
 import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
+import { RecensioniComponent } from './recensioni/recensioni.component';
 
 /**
  * Modulo dell'admin, qui vengono dichiarate le component che utilizza 
@@ -16,7 +17,7 @@ import { WorkInProgressComponent } from './work-in-progress/work-in-progress.com
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, PrenotazioniComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, PrenotazioniComponent, RecensioniComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

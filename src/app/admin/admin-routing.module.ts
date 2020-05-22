@@ -5,6 +5,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UsersComponent } from './users/users.component';
 import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
+import { RecensioniComponent } from './recensioni/recensioni.component';
 
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:
@@ -23,6 +24,7 @@ const routes: Routes = [
     { path: '', component: AdminDashboardComponent},
     { path: 'users', component: UsersComponent},
     { path: 'prenotazioni', component: PrenotazioniComponent},
+    { path: 'recensioni', component: RecensioniComponent},
     { path: 'work-in-progress', component: WorkInProgressComponent}
   ]}
 ];
