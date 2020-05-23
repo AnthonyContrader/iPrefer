@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDTO } from 'src/dto/userdto';
+import { PiattoDTO } from 'src/dto/piattodto';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +10,12 @@ import { UserDTO } from 'src/dto/userdto';
 export class HeaderComponent implements OnInit {
 
   user: UserDTO = new UserDTO;
+  piatto:PiattoDTO=new PiattoDTO;
   constructor() { }
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('currentUser'));
+    this.piatto=JSON.parse(localStorage.getItem('currentPiatto'));
   }
 
 }
