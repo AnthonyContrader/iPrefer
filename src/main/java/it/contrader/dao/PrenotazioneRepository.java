@@ -11,6 +11,6 @@ import it.contrader.model.Prenotazione;
 @Transactional
 public interface PrenotazioneRepository extends CrudRepository<Prenotazione, Long> {
 	
-	Prenotazione findByClienteId(long id);
+	Prenotazione findById(long id);
 
 }

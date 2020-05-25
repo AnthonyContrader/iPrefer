@@ -33,7 +33,7 @@ public class Recensione {
 
 //	@JoinColumn(name = "id", referencedColumnName = "id")
 //	@OneToOne(cascade=CascadeType.ALL)
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 //	@JoinColumn(name ="prenotazione_id", referencedColumnName= "id") //boh
 	@JoinColumn(unique = true)
 	private Prenotazione prenotazione;

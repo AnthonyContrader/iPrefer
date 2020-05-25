@@ -17,8 +17,8 @@ public class PrenotazioneService extends AbstractService<Prenotazione, Prenotazi
 	@Autowired
 	private PrenotazioneRepository repository;
 	
-	public PrenotazioneDTO findByClienteId(long id) {
-		return converter.toDTO(repository.findByClienteId(id));
+	public PrenotazioneDTO findById(long id) {
+		return converter.toDTO(repository.findById(id));
 	}
 
 }

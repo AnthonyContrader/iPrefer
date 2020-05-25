@@ -41,16 +41,17 @@ public class Prenotazione {
 	
 	@Column(unique = true)
 	 
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	//@Temporal(TemporalType.TIMESTAMP)
+	//@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date data_ora;
 	
 	private int tavolo;
 	
 	
-	@OneToOne
+	/*@OneToOne
 	@JoinColumn(unique = true)
 	private Recensione recensione; //aggiunto io 
+	*/
 	
 	@ManyToOne
     @JoinColumn(name="id_cliente")

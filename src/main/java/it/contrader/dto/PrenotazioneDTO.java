@@ -2,6 +2,7 @@ package it.contrader.dto;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -20,12 +21,13 @@ public class PrenotazioneDTO {
 	
 	private long id;
 	
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss", timezone = "Europe/Berlin")	
 	private Date data_ora;
 	
 	private int tavolo;
 	
-	private Recensione recensione;
+	//private Recensione recensione;
 	
-	private ClienteDTO clienteDTO;
+	private Cliente cliente;
 
 }
