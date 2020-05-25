@@ -9,9 +9,12 @@ import { Router } from '@angular/router';
 export class AdminMenuComponent implements OnInit {
 
   isUserCollapsed = false;
-  isClientCollapsed = false;
   isAccountCollapsed = false;
+  isBevandaCollapsed = false;
+  isPiattoCollapsed = false;
+  isClienteCollapsed = false;
   isPrenotazioneCollapsed = false;
+  isOrdinazioneCollapsed = false;
   isRecensioneCollapsed = false;
   
 
@@ -38,10 +41,34 @@ export class AdminMenuComponent implements OnInit {
     } else { this.isAccountCollapsed = false; }
   }
 
+  piatticollapse() {
+    if (this.isPiattoCollapsed === false) {
+      this.isPiattoCollapsed = true;
+    } else { this.isPiattoCollapsed = false; }
+  }
+
+  bevandecollapse() {
+    if (this.isBevandaCollapsed === false) {
+      this.isBevandaCollapsed = true;
+    } else { this.isBevandaCollapsed = false; }
+  }
+
+  clienticollapse() {
+    if (this.isClienteCollapsed === false) {
+      this.isClienteCollapsed = true;
+    } else { this.isClienteCollapsed = false; }
+  }
+
   prenotazionicollapse() {
     if (this.isPrenotazioneCollapsed === false) {
       this.isPrenotazioneCollapsed = true;
     } else { this.isPrenotazioneCollapsed = false; }
+  }
+
+  ordinazionicollapse() {
+    if (this.isOrdinazioneCollapsed === false) {
+      this.isOrdinazioneCollapsed = true;
+    } else { this.isOrdinazioneCollapsed = false; }
   }
 
   recensionicollapse() {

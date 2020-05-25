@@ -6,6 +6,10 @@ import { UsersComponent } from './users/users.component';
 import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { RecensioniComponent } from './recensioni/recensioni.component';
+import { ClientiComponent } from './clienti/clienti.component';
+import { PiattiComponent } from './piatti/piatti.component';
+import { BevandeComponent } from './bevande/bevande.component';
+//import { OrdinazioniComponent } from './ordinazioni/ordinazioni.component';
 
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:
@@ -23,7 +27,11 @@ const routes: Routes = [
   { path: 'admin-dashboard', component: AdminLayoutComponent, children:[
     { path: '', component: AdminDashboardComponent},
     { path: 'users', component: UsersComponent},
+    { path: 'clienti', component: ClientiComponent},
+    { path: 'piatti', component: PiattiComponent},
+    { path: 'bevande', component: BevandeComponent},
     { path: 'prenotazioni', component: PrenotazioniComponent},
+    { path: 'ordinazioni', component: OrdinazioniComponent},
     { path: 'recensioni', component: RecensioniComponent},
     { path: 'work-in-progress', component: WorkInProgressComponent}
   ]}
