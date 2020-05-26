@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PiattoService } from 'src/service/piatto.service';
 import { PiattoDTO } from 'src/dto/piattodto';
 
+
 @Component({
   selector: 'app-piatti',
   templateUrl: './piatti.component.html',
@@ -37,4 +38,6 @@ export class PiattiComponent implements OnInit {
   clear(){
     this.piattotoinsert = new PiattoDTO();
   }
+
+
 }

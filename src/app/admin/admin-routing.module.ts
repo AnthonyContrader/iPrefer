@@ -9,7 +9,7 @@ import { RecensioniComponent } from './recensioni/recensioni.component';
 import { ClientiComponent } from './clienti/clienti.component';
 import { PiattiComponent } from './piatti/piatti.component';
 import { BevandeComponent } from './bevande/bevande.component';
-//import { OrdinazioniComponent } from './ordinazioni/ordinazioni.component';
+import { OrdinazioniComponent } from './ordinazioni/ordinazioni.component';
 
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:

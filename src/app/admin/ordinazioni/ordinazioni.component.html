@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-1">
+  
+      </div>
+      <div class="col-md-10">
+        <table>
+          <tr>
+            <th>Piatto </th>
+            <th>Bevanda</th>
+            <th>Prenotazione</th>
+            <th>Data e ora</th>
+            <th>Costo totale</th>
+            <th>Edit</th>
+          </tr>
+          <tr>
+          <td>
+            <select [(ngModel)]="ordinazionetoinsert.piatto">
+               <option *ngFor="let piatto of piatti" [ngValue]="piatto" >{{piatto.nome_piatto}}</option>
+             </select>
+            </td> 
+            <td>
+            <select [(ngModel)]="ordinazionetoinsert.bevanda">
+               <option *ngFor="let bevanda of bevande" [ngValue]="bevanda" >{{bevanda.nome_bevanda}}</option>
+             </select>
+            </td>
+            <td>
+            <select [(ngModel)]="ordinazionetoinsert.prenotazione">
+               <option *ngFor="let prenotazione of prenotazioni" [ngValue]="prenotazione" >{{prenotazione.id}}</option>
+             </select>
+            </td>
+            <td>
+                    <input placeholder="data_ora" [(ngModel)]="ordinazionetoinsert.data_ora">
+            </td>
+            <td>
+                    <input placeholder="costo_tot" [(ngModel)]="ordinazionetoinsert.costo_tot">
+            </td>
+            <td>
+              <button (click)="insert(ordinazionetoinsert)">Insert</button>
+            </td>
+            <td>
+              <button (click)="clear()">Clear</button>
+            </td>
+          </tr>
+          <tr *ngFor="let ordinazione of ordinazioni">
+                <td>
+                    <label >{{ordinazione.piatto.nome_piatto}}</label>
+                      
+                </td>
+                <td>
+                    <label >{{ordinazione.bevanda.nome_bevanda}}</label>
+                     
+                </td>
+                <td>
+                    <label >{{ordinazione.prenotazione.id}}</label>
+              </td>
+                <td>
+                    <input  [(ngModel)]="ordinazione.data_ora"> 
+               </td>
+                <td>
+                    <input  [(ngModel)]="ordinazione.costo_tot">
+               </td>
+            <td>
+              <button (click)=update(ordinazione)>Save</button>
+            </td>
+            <td>
+              <button (click)="delete(ordinazione)">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-1">
+  
+      </div>
+    </div>
+  </div>
