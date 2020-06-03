@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-1">
+  
+      </div>
+      <div class="col-md-10">
+        <table>
+          <tr>
+            <th>
+              Nome_bevanda
+            </th>
+            <th>
+              Costo_bevanda
+            </th>
+            <th>
+              Alcolico
+            </th>
+            <th>
+             Descrizione
+            </th>
+            <th>
+              Edit
+            </th>
+            <th>
+              Bevanda
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <input placeholder="nome_bevanda" [(ngModel)]="bevandatoinsert.nomebevanda">
+            </td>
+            <td>
+              <input placeholder="costo_bevanda" [(ngModel)]="bevandatoinsert.costobevanda">
+            </td>
+            <td>
+                <input placeholder="alcolico" [(ngModel)]="bevandatoinsert.alcolico">
+            </td>
+            <td>
+                <input placeholder="descrizione" [(ngModel)]="bevandatoinsert.descrizione">
+            </td>
+            <td>
+              <button (click)="insert(bevandatoinsert)">Insert</button>
+            </td>
+            <td>
+              <button (click)="clear()">Clear</button>
+            </td>
+          </tr>
+          <tr *ngFor="let bevanda of bevande">
+            <td>
+              <input [(ngModel)]="bevanda.nomebevanda">
+            </td>
+            <td>
+              <input [(ngModel)]="bevanda.costobevanda">
+            </td>
+            <td>
+                <input [(ngModel)]="bevanda.alcolico">
+            </td>
+            <td>
+                <input [(ngModel)]="bevanda.descrizione">
+            </td>
+            <td>
+              <button (click)=update(bevanda)>Save</button>
+            </td>
+            <td>
+              <button (click)="delete(bevanda)">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-1">
+  
+      </div>
+    </div>
+  </div>

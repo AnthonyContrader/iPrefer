@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-1">
+  
+      </div>
+      <div class="col-md-10">
+        <table>
+          <tr>
+            <th>
+              Nome Piatto
+            </th>
+            <th>
+              Ingredienti
+            </th>
+            <th>
+              Costo Piatto
+            </th>
+            <th>
+                Descrizione Piatto
+            </th>
+            <th>
+              Operazione1
+            </th>
+            <th>
+              Operazione2
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <input placeholder="nome_piatto" [(ngModel)]="piattotoinsert.nomepiatto">
+            </td>
+            <td>
+              <input placeholder="ingredienti" [(ngModel)]="piattotoinsert.ingredienti">
+            </td>
+            <td>
+                <input placeholder="costo_piatto" [(ngModel)]="piattotoinsert.costopiatto">
+            </td>
+            <td>
+                <input placeholder="descrizione_piatto" [(ngModel)]="piattotoinsert.descrizionepiatto">
+            </td>
+            <td>
+              <button (click)="insert(piattotoinsert)">Inserisci</button>
+            </td>
+            <td>
+              <button (click)="clear()">Clear</button>
+            </td>
+          </tr>
+          <tr *ngFor="let piatto of piatto">
+            <td>
+              <input [(ngModel)]="piatto.nomepiatto">
+            </td>
+            <td>
+              <input [(ngModel)]="piatto.ingredienti">
+            </td>
+            <td>
+                <input [(ngModel)]="piatto.costopiatto">
+            </td>  
+            <td>
+                <input [(ngModel)]="piatto.descrizionepiatto">
+            </td>  
+            <td>
+              <button (click)=update(piatto)>Modifica</button>
+            </td>
+            <td>
+              <button (click)="delete(piatto)">Cancella</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-1">
+  
+      </div>
+    </div>
+  </div>

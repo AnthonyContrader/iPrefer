@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-1">
+  
+      </div>
+      <div class="col-md-10">
+        <table>
+          <tr>
+            <th>
+              Nome cliente
+            </th>
+            <th>
+              Cognome cliente
+            </th>
+            <th>
+              Intolleranza bool
+            </th>
+            <th>
+                Telefono
+            </th>
+            <th>
+                Intollerante
+            </th>
+            <th>
+              Edit
+            </th>
+            <th>
+              Cliente
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <input placeholder="nome cliente" [(ngModel)]="clientetoinsert.nomecliente">
+            </td>
+            <td>
+              <input placeholder="cognome cliente" [(ngModel)]="clientetoinsert.cognomecliente">
+            </td>
+            <td>
+              <select placeholder="intolleranza bool" [(ngModel)]="clientetoinsert.intolleranzabool">
+                <option value=true>SI</option>
+                <option value=false>NO</option>
+              </select>
+            </td>
+            <td>
+                <input placeholder="telefono" [(ngModel)]="clientetoinsert.telefono">
+            </td>
+            <td>
+                <input placeholder="intollerante" [(ngModel)]="clientetoinsert.intollerante">
+            </td>
+            <td>
+              <button (click)="insert(clientetoinsert)">Insert</button>
+            </td>
+            <td>
+              <button (click)="clear()">Clear</button>
+            </td>
+          </tr>
+          <tr *ngFor="let cliente of clienti">
+            <td>
+              <input [(ngModel)]="cliente.nomecliente">
+            </td>
+            <td>
+              <input [(ngModel)]="cliente.cognomecliente">
+            </td>
+            <td>
+              <select [(ngModel)]="cliente.intolleranzabool">
+                <option [selected]="cliente.intolleranzabool===true" value=true>SI</option>
+                <option [selected]="cliente.intolleranzabool===false" value=false>NO</option>
+              </select>
+            </td>
+            <td>
+                <input [(ngModel)]="cliente.telefono">
+              </td>
+              <td>
+                <input [(ngModel)]="cliente.intollerante">
+              </td>
+            <td>
+              <button (click)=update(cliente)>Save</button>
+            </td>
+            <td>
+              <button (click)="delete(cliente)">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-1">
+  
+      </div>
+    </div>
+  </div>

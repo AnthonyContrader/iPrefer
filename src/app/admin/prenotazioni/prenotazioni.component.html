@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10">
+      <table>
+        <tr>
+          <th>
+            Data e Ora
+          </th>
+          <th>
+            Tavolo
+          </th>
+          <th>
+            ID Cliente
+          </th>
+          <th>
+            Edit
+          </th>
+          <th>
+            User
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="data e ora" [(ngModel)]="prenotazionetoinsert.dataora">
+          </td>
+          <td>
+            <input placeholder="tavolo" [(ngModel)]="prenotazionetoinsert.tavolo">
+          </td>
+          <td>
+              <select [(ngModel)]="prenotazionetoinsert.cliente" >
+                  <option *ngFor="let cliente of clienti" [ngValue]="cliente">{{cliente.nomecliente}} {{cliente.cognomecliente}}</option>
+              </select>
+            
+          </td>
+          <td>
+            <button (click)="insert(prenotazionetoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Clear</button>
+          </td>
+        </tr>
+        <tr *ngFor="let prenotazione of prenotazioni">
+          <td>
+            <input [(ngModel)]="prenotazione.dataora">
+          </td>
+          <td>
+            <input [(ngModel)]="prenotazione.tavolo">
+          </td>
+          <td>
+              <label>{{prenotazione.cliente.nomecliente}} {{prenotazione.cliente.cognomecliente}}</label>
+          </td>
+          <td>
+            <button (click)=update(prenotazione)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(prenotazione)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>
