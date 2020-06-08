@@ -13,9 +13,11 @@ export class PrenotazioneDTO {
 
     id: number;
 
-    dataora: string;
+    dataora: Date;
 
     tavolo: number;
+
+    clienteId: number;
 
     cliente: ClienteDTO;
 	

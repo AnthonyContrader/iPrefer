@@ -30,9 +30,11 @@
             <input placeholder="tavolo" [(ngModel)]="prenotazionetoinsert.tavolo">
           </td>
           <td>
-              <select [(ngModel)]="prenotazionetoinsert.cliente" >
-                  <option *ngFor="let cliente of clienti" [ngValue]="cliente">{{cliente.nomecliente}} {{cliente.cognomecliente}}</option>
+              
+              <select [(ngModel)]="prenotazionetoinsert.clienteId" >
+                  <option *ngFor="let cliente of clienti" [ngValue]="cliente.id">{{cliente.nomecliente}} {{cliente.cognomecliente}}</option>
               </select>
+            
             
           </td>
           <td>
@@ -50,7 +52,7 @@
             <input [(ngModel)]="prenotazione.tavolo">
           </td>
           <td>
-              <label>{{prenotazione.cliente.nomecliente}} {{prenotazione.cliente.cognomecliente}}</label>
+              <label>{{prenotazione.clienteId}}</label>
           </td>
           <td>
             <button (click)=update(prenotazione)>Save</button>

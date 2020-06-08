@@ -26,8 +26,8 @@
           <td>
             <input placeholder="testo" [(ngModel)]="recensionetoinsert.testo">
           </td>
-            <select [(ngModel)]="recensionetoinsert.prenotazione">
-               <option *ngFor="let prenotazione of prenotazioni" [ngValue]="prenotazione" >{{prenotazione.id}}</option>
+            <select [(ngModel)]="recensionetoinsert.prenotazioneId">
+               <option *ngFor="let prenotazione of prenotazioni" [ngValue]="prenotazione.id" >{{prenotazione.id}}</option>
              </select>
             <td>
             <button (click)="insert(recensionetoinsert)">Insert</button>
@@ -44,7 +44,7 @@
             <input [(ngModel)]="recensione.testo">
           </td>
           <td>
-            <label >{{recensione.prenotazione.id}}</label>
+            <label >{{recensione.prenotazioneId}}</label>
            </td>
           <td>
             <button (click)=update(recensione)>Save</button>

@@ -7,8 +7,17 @@ export class OrdinazioneDTO{
     id: number;
     costotot: number;
     dataora: Date;
-    Piatto: PiattoDTO;
-    Bevanda: BevandaDTO;
-    prenotazione: PrenotazioneDTO;
+
+    
+
+    piattos: PiattoDTO[];
+    bevandas: BevandaDTO[];
+    prenotazioneId: number;
+
+    /*piattos : PiattoDTO;
+    bevandas: BevandaDTO;*/
+
+    
+
 
 }

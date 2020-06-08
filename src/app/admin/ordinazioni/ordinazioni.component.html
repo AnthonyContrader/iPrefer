@@ -15,18 +15,18 @@
           </tr>
           <tr>
           <td>
-            <select [(ngModel)]="ordinazionetoinsert.Piatto">
-               <option *ngFor="let Piatto of piatti" [ngValue]="Piatto" >{{Piatto.nomepiatto}}</option>
+            <select [(ngModel)]="ordinazionetoinsert.piattos">
+               <option *ngFor="let piatto of piatti" [ngValue]="piatto" >{{piatto.nomepiatto}}</option>
              </select>
             </td> 
             <td>
-            <select [(ngModel)]="ordinazionetoinsert.Bevanda">
-               <option *ngFor="let Bevanda of bevande" [ngValue]="Bevanda" >{{Bevanda.nomebevanda}}</option>
+            <select [(ngModel)]="ordinazionetoinsert.bevandas">
+               <option *ngFor="let bevanda of bevande" [ngValue]="bevanda" >{{bevanda.nomebevanda}}</option>
              </select>
             </td>
             <td>
-            <select [(ngModel)]="ordinazionetoinsert.prenotazione">
-               <option *ngFor="let prenotazione of prenotazioni" [ngValue]="prenotazione" >{{prenotazione.id}}</option>
+            <select [(ngModel)]="ordinazionetoinsert.prenotazioneId">
+               <option *ngFor="let prenotazione of prenotazioni" [ngValue]="prenotazione.id" >{{prenotazione.id}}</option>
              </select>
             </td>
             <td>
@@ -39,20 +39,28 @@
               <button (click)="insert(ordinazionetoinsert)">Insert</button>
             </td>
             <td>
+              <button (click)="insert(ordinazionetoinsert)">Insert</button>
+            </td>
+            <td>
               <button (click)="clear()">Clear</button>
             </td>
           </tr>
           <tr *ngFor="let ordinazione of ordinazioni">
                 <td>
-                    <label >{{ordinazione.piatto.nomepiatto}}</label>
+                    <select >
+                        <option *ngFor="let piatto of ordinazione.piattos" [value]="piatto" >{{piatto.nomepiatto}}</option>
+                    </select>
+                    
                       
                 </td>
                 <td>
-                    <label >{{ordinazione.bevanda.nomebevanda}}</label>
+                    <select >
+                        <option *ngFor="let bevanda of ordinazione.bevandas" [value]="bevanda" >{{bevanda.nomebevanda}}</option>
+                    </select>
                      
                 </td>
                 <td>
-                    <label >{{ordinazione.prenotazione.id}}</label>
+                    <label >{{ordinazione.prenotazioneId}}</label>
               </td>
                 <td>
                     <input  [(ngModel)]="ordinazione.dataora"> 

@@ -33,7 +33,7 @@ import { PrenotazioneDTO } from 'src/dto/prenotazionedto';
     }
   
     getOrdinazioni() {
-      this.service.getAll().subscribe(ordinazioni => this.ordinazioni = ordinazioni);
+      this.service.getAll().subscribe(ordinazioni =>{ this.ordinazioni = ordinazioni, console.log(ordinazioni[1].piattos[0])});
     }
     getPiatti(){
       this.service_piatto.getAll().subscribe(piatti => this.piatti = piatti);

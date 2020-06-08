@@ -6,5 +6,6 @@ export class RecensioneDTO{
     id: number;
     voto: number;
     testo: String;
+    prenotazioneId: number;
     prenotazione: PrenotazioneDTO;
 }
