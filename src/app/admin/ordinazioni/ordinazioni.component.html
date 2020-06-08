@@ -15,12 +15,12 @@
           </tr>
           <tr>
           <td>
-            <select [(ngModel)]="ordinazionetoinsert.piattos">
+            <select [(ngModel)]="ordinazionetoinsert.piattos[0]">
                <option *ngFor="let piatto of piatti" [ngValue]="piatto" >{{piatto.nomepiatto}}</option>
              </select>
             </td> 
             <td>
-            <select [(ngModel)]="ordinazionetoinsert.bevandas">
+            <select [(ngModel)]="ordinazionetoinsert.bevandas[0]">
                <option *ngFor="let bevanda of bevande" [ngValue]="bevanda" >{{bevanda.nomebevanda}}</option>
              </select>
             </td>

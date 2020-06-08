@@ -30,6 +30,9 @@ import { PrenotazioneDTO } from 'src/dto/prenotazionedto';
       this.getPiatti();
       this.getBevande();
       this.getPrenotazioni();
+      this.ordinazionetoinsert = new OrdinazioneDTO();
+      this.ordinazionetoinsert.piattos = [new PiattoDTO()];
+      this.ordinazionetoinsert.bevandas = [new BevandaDTO()];
     }
   
     getOrdinazioni() {
