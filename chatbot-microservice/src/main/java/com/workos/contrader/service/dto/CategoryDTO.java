@@ -14,6 +14,7 @@ public class CategoryDTO implements Serializable {
     @NotNull
     private String categoryName;
 
+    @NotNull
     private String catHelpMessage;
 
     public Long getId() {

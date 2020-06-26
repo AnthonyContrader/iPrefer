@@ -28,7 +28,7 @@
             ]
         }
     ],
-    "changelogDate": "20200624091435",
+    "changelogDate": "20200625154533",
     "dto": "mapstruct",
     "searchEngine": false,
     "service": "serviceImpl",

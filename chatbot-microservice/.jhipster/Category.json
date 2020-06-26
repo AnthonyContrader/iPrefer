@@ -12,10 +12,13 @@
         },
         {
             "fieldName": "catHelpMessage",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
         }
     ],
-    "changelogDate": "20200624091025",
+    "changelogDate": "20200625154332",
     "dto": "mapstruct",
     "searchEngine": false,
     "service": "serviceImpl",

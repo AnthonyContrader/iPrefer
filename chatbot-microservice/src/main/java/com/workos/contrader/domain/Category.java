@@ -24,7 +24,8 @@ public class Category implements Serializable {
     @Column(name = "category_name", nullable = false)
     private String categoryName;
 
-    @Column(name = "cat_help_message")
+    @NotNull
+    @Column(name = "cat_help_message", nullable = false)
     private String catHelpMessage;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
